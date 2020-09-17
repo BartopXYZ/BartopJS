@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Continuous_Integration
 
 jobs:
   Build_and_Test:
