@@ -1,4 +1,4 @@
 node_modules
 dist
-dist.es2015
+dist.module
 .DS_STORE

@@ -1,4 +1,4 @@
-import "cross-fetch/polyfill";
+import { fetch } from 'cross-fetch';
 import { Auth } from "./Auth";
 
 const baseUrl = "https://api.bartop.xyz";

@@ -4,6 +4,8 @@
     "esModuleInterop": true,
     "target": "es2017",
     "outDir": "dist.module",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
   },
   "include": [
     "src/**/*"
