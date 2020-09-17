@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+      - release/*
+
+jobs:
+  Build_and_Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        name: Check Out Repo
+      - uses: actions/setup-node@master
+        name: Set up NodeJS
+        with:
+          node-version: "10.x"
+      - run: npm install
+        name: Install Dependencies
+      - run: npm run build
+        name: Build Project
+      - name: Publish if version has been updated
+        uses: pascalgn/npm-publish-action@06e0830ea83eea10ed4a62654eeaedafb8bf50fc
+        with:
+          tag_name: "v%s"
+          tag_message: "v%s"
+          commit_pattern: "^Release (\\S+)"
+          workspace: "."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

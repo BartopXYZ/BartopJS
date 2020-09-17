@@ -1,0 +1,18 @@
+name: Continuous Integration
+
+jobs:
+  Build_and_Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        name: Check Out Repo
+      - uses: actions/setup-node@master
+        name: Set up NodeJS
+        with:
+          node-version: "10.x"
+      - run: npm install
+        name: Install Dependencies
+      - run: npm run build
+        name: Build Project
+      - run: npm run test
+        name: Run Test suite
