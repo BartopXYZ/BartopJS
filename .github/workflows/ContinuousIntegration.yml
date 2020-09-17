@@ -18,14 +18,9 @@ jobs:
         name: Build Project
       - run: npm run test
         name: Run Test suite
-      - if: github.ref == 'refs/heads/main'
-        name: Publish if version has been updated
-        uses: pascalgn/npm-publish-action@06e0830ea83eea10ed4a62654eeaedafb8bf50fc
+      - if: github.ref == 'refs/heads/main' && startsWith(github.event.head_commit.message,'release')
+        name: Publish
+        uses: JS-DevTools/npm-publish@v1
         with:
-          tag_name: "v%s"
-          tag_message: "v%s"
-          commit_pattern: "^release: (\\S+)"
-          workspace: "."
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          check-version: true
+          token: ${{ secrets.NPM_TOKEN }}
