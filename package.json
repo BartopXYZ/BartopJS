@@ -14,6 +14,7 @@
   },
   "author": "Michael Van Der Velden <mikevdv@vandie.co.uk> (https://mikevdv.dev)",
   "license": "ISC",
+  "repository": "github:BartopXYZ/BartopJS",
   "devDependencies": {
     "@types/tape": "^4.13.0",
     "tape": "^5.0.1",
