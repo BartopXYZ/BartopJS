@@ -1,19 +1,20 @@
 {
   "name": "@bartop-xyz/bartop",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A bartop.xyz JS client library",
   "main": "dist/index.js",
-  "module": "dist.es2015/index.js",
+  "module": "dist.module/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run build:browser && npm run build:node",
-    "build:browser": "tsc -p tsconfig.browser.json",
+    "build:browser": "tsc -p tsconfig.module.json",
     "build:node": "tsc -p tsconfig.node.json",
     "build:clean": "npm ci && npm run build",
     "test": "ts-node node_modules/tape/bin/tape tests/**/*.ts"
   },
   "author": "Michael Van Der Velden <mikevdv@vandie.co.uk> (https://mikevdv.dev)",
   "license": "ISC",
+  "repository": "github:BartopXYZ/BartopJS",
   "devDependencies": {
     "@types/tape": "^4.13.0",
     "tape": "^5.0.1",
@@ -23,7 +24,7 @@
   },
   "files": [
     "dist",
-    "dist.es2015",
+    "dist.module",
     "package-lock.json",
     "tests",
     "readme.md",

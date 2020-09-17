@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "module": "es2015",
+    "module": "ES6",
     "esModuleInterop": true,
-    "target": "es2015",
-    "outDir": "dist.es2015",
+    "target": "es2017",
+    "outDir": "dist.module",
   },
   "include": [
     "src/**/*"
