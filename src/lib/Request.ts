@@ -8,7 +8,7 @@ export async function request(
 ) {
   let url: string = `${baseUrl}/${endpoint}`;
   const requestOptions: RequestInit = {
-    credentials: "same-origin",
+    credentials: "include",
     headers: {
       Authorization: Auth.current.asHeader,
     },
