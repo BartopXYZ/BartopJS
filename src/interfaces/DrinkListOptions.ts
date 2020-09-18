@@ -16,5 +16,5 @@ export default interface InterfaceDrinkListOptions {
   "Liqueurs" |
   "Bitters" |
   "Vermouth";
-  subCatagories?: [string];
+  subCatagories?: string[];
 }

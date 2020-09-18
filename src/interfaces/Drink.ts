@@ -16,6 +16,6 @@ export default interface InterfaceDrink {
     "Bitters" |
     "Vermouth";
   readonly about?: string;
-  readonly barcodes?: [string];
-  readonly subCatagories ?: [string];
+  readonly barcodes?: string[];
+  readonly subCatagories ?: string[];
 }
