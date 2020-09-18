@@ -14,7 +14,7 @@ export class Drink implements InterfaceDrink {
         const drink = Drink.fromJSON(response);
         return drink;
       } catch(e) {
-        throw new Error("Couldn't find drink");
+        throw new Error("Couldn't parse drink");
       }
     }
 
@@ -24,7 +24,7 @@ export class Drink implements InterfaceDrink {
         const drink = Drink.fromJSON(response);
         return drink;
       } catch(e) {
-        throw new Error("Couldn't find barcode");
+        throw new Error("Couldn't parse drink");
       }
     }
 

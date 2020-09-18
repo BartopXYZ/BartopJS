@@ -25,5 +25,9 @@ export async function request(
   }
 
   const response: Response = await fetch(url, requestOptions);
-  return response.json();
+  const rjson = await response.json();
+  if (rjson.error) {
+    throw new Error(rjson.error);
+  }
+  return rjson;
 }
