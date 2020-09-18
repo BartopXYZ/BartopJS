@@ -10,7 +10,22 @@ export class Drink implements InterfaceDrink {
 
     public static async getById(id: string): Promise<Drink> {
       const response = await request(`v1/drinks/${id}`);
-      return Drink.fromJSON(response);
+      try {
+        const drink = Drink.fromJSON(response);
+        return drink;
+      } catch(e) {
+        throw new Error("Couldn't find drink");
+      }
+    }
+
+    public static async getByBarcode(barcode: string): Promise<Drink> {
+      const response = await request(`v1/drinks/from-barcode/${barcode}`);
+      try {
+        const drink = Drink.fromJSON(response);
+        return drink;
+      } catch(e) {
+        throw new Error("Couldn't find barcode");
+      }
     }
 
     public static fromJSON(drinkJSON: InterfaceDrink): Drink {
