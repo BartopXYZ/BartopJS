@@ -42,8 +42,8 @@ export class Drink implements InterfaceDrink {
     public name: string;
     public brand: string;
     public abv: number;
-    public barcodes: [string];
+    public barcodes: string[];
     public catagory;
-    public subCatagories?: [string];
+    public subCatagories?: string[];
     public about?: string;
   }
