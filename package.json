@@ -35,6 +35,8 @@
     "cross-fetch": "^3.0.5"
   },
   "husky": {
-    "pre-push": "npm run build && npm run test"
+    "hooks": {
+      "pre-push": "npm run build && npm run test"
+    }
   }
 }
