@@ -7,9 +7,9 @@ import { request } from "./Request";
 
 export class Cocktail implements InterfaceCocktail {
     public static async list(options?: InterfaceCocktailListOptions): Promise<[Cocktail]> {
-      if (options.drinks && options.drinks instanceof Drink) {
+      if (options.drinks) {
         const drinks = JSON.parse(JSON.stringify(options.drinks));
-        options.drinks = drinks.map( (drink) => drink.id );
+        options.drinks = drinks.map( (drink) => typeof drink === "string" ? drink : drink.id );
       }
 
       const response = await request("v1/cocktails", options);
