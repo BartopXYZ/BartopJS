@@ -1,4 +1,4 @@
-import DrinkType from "../types/DrinkType";
+import {DrinkType} from "../types/DrinkType";
 
 export interface InterfaceDrink {
   readonly id: string;
