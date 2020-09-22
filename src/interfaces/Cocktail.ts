@@ -1,4 +1,4 @@
-import PrepMethod from "../types/prepMethod";
+import {PrepMethod} from "../types/prepMethod";
 import { InterfaceCocktailComponentDrink } from "./CocktailComponent";
 
 export interface InterfaceCocktail {
