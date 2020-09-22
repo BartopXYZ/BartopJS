@@ -32,7 +32,13 @@ export async function request(
   if (Object.keys(data).length) {
     if (method.toUpperCase() === "GET") {
       url += "?" + Object.keys(data)
-        .map((key: string) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+        .map((key: string) => {
+          let d = data[key];
+          if(Array.isArray(d)){
+            d = d.join(",");
+          }
+          return `${encodeURIComponent(key)}=${encodeURIComponent(d)}`;
+        })
         .join("&");
     } else {
       requestOptions.body = JSON.stringify(data);
