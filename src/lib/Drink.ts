@@ -1,5 +1,5 @@
-import InterfaceDrink from "../interfaces/Drink";
-import InterfaceDrinkListOptions from "../interfaces/DrinkListOptions";
+import { InterfaceDrink } from "../interfaces/Drink";
+import { InterfaceDrinkListOptions } from "../interfaces/DrinkListOptions";
 import { request } from "./Request";
 
 export class Drink implements InterfaceDrink {

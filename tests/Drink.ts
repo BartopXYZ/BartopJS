@@ -1,6 +1,6 @@
 import * as test from "tape";
 import {Drink} from "../dist";
-import InterfaceDrink from "../dist/interfaces/Drink";
+import {InterfaceDrink} from "../dist/interfaces/Drink";
 
 interface IntefaceExampleDrink extends InterfaceDrink {
   businessCode: string;
