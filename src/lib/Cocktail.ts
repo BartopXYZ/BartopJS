@@ -12,7 +12,7 @@ export class Cocktail implements InterfaceCocktail {
         options.drinks = drinks.map( (drink) => drink.id );
       }
 
-      const response = await request("v1/drinks", options);
+      const response = await request("v1/cocktails", options);
       return response.map(Cocktail.fromJSON);
     }
 
