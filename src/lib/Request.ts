@@ -34,7 +34,7 @@ export async function request(
       url += "?" + Object.keys(data)
         .map((key: string) => {
           let d = data[key];
-          if(Array.isArray(d)){
+          if (Array.isArray(d)) {
             d = d.join(",");
           }
           return `${encodeURIComponent(key)}=${encodeURIComponent(d)}`;
