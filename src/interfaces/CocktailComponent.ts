@@ -4,4 +4,5 @@ export interface InterfaceCocktailComponentDrink {
   mlMeasure: number;
   ounceMeasure: number;
   drink: Drink | string;
+  alternatives?: string[];
 }
