@@ -1,3 +1,6 @@
+/**
+ * The type of drink
+ */
 export type DrinkType = "Gin" |
 "Whiskey" |
 "Rum" |

@@ -16,6 +16,15 @@ export class Cocktail implements InterfaceCocktail {
       return response.map(Cocktail.fromJSON);
     }
 
+    public static async getById(id: string): Promise<Cocktail> {
+      const response = await request(`v1/cocktails/${id}`);
+      try {
+        return Cocktail.fromJSON(response);
+      } catch(e) {
+        throw new Error("Couldn't parse cocktail");
+      }
+    }
+
     public static fromJSON(drinkJSON: InterfaceCocktail): Cocktail {
       const attributes = {};
       const wantedAttributes = ["id", "name", "method", "drinks", "ingredients", "steps"];
