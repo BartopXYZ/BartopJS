@@ -15,7 +15,7 @@ function getCookie(name) {
 export async function request(
   endpoint: string, data: object = {}, method: "POST" | "GET" | "PUT"| "DELETE" = "GET",
 ) {
-  let url: string = `${baseUrl}/${endpoint}`;
+  let url: string = `${Auth.altURL || baseUrl}/${endpoint}`;
   const requestOptions: RequestInit = {
     credentials: "include",
     headers: {

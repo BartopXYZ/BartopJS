@@ -1,4 +1,5 @@
 export class Auth {
+  public static altURL: string;
   private static instance: Auth;
   public key: string;
   constructor(key) {
