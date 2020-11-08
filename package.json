@@ -1,6 +1,6 @@
 {
   "name": "@bartop-xyz/bartop",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "A bartop.xyz JS client library. Work in Progress.",
   "main": "dist/index.js",
   "module": "dist.module/index.js",

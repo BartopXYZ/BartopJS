@@ -4,12 +4,12 @@ import { request } from "./Request";
 
 export class Drink implements InterfaceDrink {
     public static async list(options?: InterfaceDrinkListOptions): Promise<[Drink]> {
-      const response = await request("v1/drinks", options);
+      const response = await request("/drinks", options);
       return response.map(Drink.fromJSON);
     }
 
     public static async getById(id: string): Promise<Drink> {
-      const response = await request(`v1/drinks/${id}`);
+      const response = await request(`/drinks/${id}`);
       try {
         const drink = Drink.fromJSON(response);
         return drink;
@@ -19,7 +19,7 @@ export class Drink implements InterfaceDrink {
     }
 
     public static async getByBarcode(barcode: string): Promise<Drink> {
-      const response = await request(`v1/drinks/from-barcode/${barcode}`);
+      const response = await request(`/drinks/from-barcode/${barcode}`);
       try {
         const drink = Drink.fromJSON(response);
         return drink;

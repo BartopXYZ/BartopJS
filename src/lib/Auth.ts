@@ -1,5 +1,6 @@
 export class Auth {
   public static altURL: string;
+  public static version: string = "v1";
   private static instance: Auth;
   public key: string;
   constructor(key) {
