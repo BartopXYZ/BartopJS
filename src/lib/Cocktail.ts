@@ -12,12 +12,12 @@ export class Cocktail implements InterfaceCocktail {
         options.drinks = drinks.map( (drink) => typeof drink === "string" ? drink : drink.id );
       }
 
-      const response = await request("/cocktails", options);
+      const response = await request("cocktails", options);
       return response.map(Cocktail.fromJSON);
     }
 
     public static async getById(id: string): Promise<Cocktail> {
-      const response = await request(`/cocktails/${id}`);
+      const response = await request(`cocktails/${id}`);
       try {
         return Cocktail.fromJSON(response);
       } catch(e) {
